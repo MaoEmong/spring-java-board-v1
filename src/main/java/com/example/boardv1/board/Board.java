@@ -2,6 +2,8 @@ package com.example.boardv1.board;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +28,7 @@ public class Board {
     private String title;
     private String content;
 
+    @CreationTimestamp
     @Column(name = "created_at")
-    private Timestamp createAt; // DB에 생성 시 create_at으로 생성됨
+    private Timestamp createdAt; // DB에 생성 시 create_at으로 생성됨
 }
